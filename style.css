@@ -11,6 +11,12 @@ h1{
     position: relative;
 }
 
+#ball{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
 #cup-1, #cup-2, #cup-3{
     position: absolute;
     width: 200px;
