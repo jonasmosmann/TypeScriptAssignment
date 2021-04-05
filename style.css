@@ -1,18 +1,23 @@
+.wrapper{
+    position: relative;
+}
+
 #cup-1, #cup-2, #cup-3{
     position: absolute;
     width: 200px;
     height: 300px;
-    top: 100px;
+    top: 200px;
 }
 
 #cup-1{
-    left: 400px;
+    left: 25%;
 }
 
 #cup-2{
-    left: 700px;
+    left: 50%;
+    transform: translate( -50%);
 }
 
 #cup-3{
-    left: 1000px;
+    right: 25%;
 }
