@@ -15,7 +15,7 @@ h1{
     position: absolute;
     width: 200px;
     height: 300px;
-    top: 100px;
+    top: 150px;
 }
 
 #cup-1{
@@ -29,4 +29,21 @@ h1{
 
 #cup-3{
     right: 25%;
+}
+
+#start-button{
+    position: absolute;
+    left: 50%;
+    transform: translate( -50%);
+    cursor: pointer;
+    background-color: #ffffff; /* Green */
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+
 }
