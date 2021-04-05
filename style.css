@@ -1,3 +1,12 @@
+body{
+    background-color: rgb(178, 206, 211);
+}
+
+h1{
+    text-align: center;
+    font-size: 4em;
+}
+
 .wrapper{
     position: relative;
 }
@@ -6,7 +15,7 @@
     position: absolute;
     width: 200px;
     height: 300px;
-    top: 200px;
+    top: 100px;
 }
 
 #cup-1{
