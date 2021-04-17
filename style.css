@@ -35,9 +35,18 @@ h1{
     left: 50%;
     transform: translate( -50%);
 }
-
 #cup-3{
     right: 25%;
+}
+
+.animate{
+    animation: moveUp 2s;
+}
+
+@keyframes moveUp{
+    0%{}
+    50%{transform:translateY(-50%);}
+    100%{}
 }
 
 #start-button{

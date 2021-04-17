@@ -30,3 +30,11 @@ export class Beispiel extends HTMLElement {
     this.innerHTML = "<h1>Hello World</h1>";
   }
 }
+
+function gameStart(){
+    startButton.addEventListener("click", hochBewegen);
+}
+
+export function hochBewegen(e:UIEvent){
+cup2.classList.add("animate");
+}
