@@ -1,5 +1,6 @@
 import { moveBall, moveCup1, moveCup3, moveUp } from "./functions";
 import { startButton } from "./Queryselectors";
+import { randomizer } from "./randomizer";
 
 gameStart();
 
