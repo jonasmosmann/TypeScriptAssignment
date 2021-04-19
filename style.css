@@ -25,6 +25,7 @@ h1{
     width: 200px;
     height: 300px;
     top: 200px;
+    z-index: 1000;
 }
 
 #cup-1{
@@ -39,13 +40,39 @@ h1{
     right: 25%;
 }
 
-.animate{
-    animation: moveUp 2s;
+.animate-cup2{
+    animation: moveUp 3s;
+}
+.animate-ball{
+    animation: moveBall 1s;
+}
+
+.animate-cup1{
+    animation: moveCup1 2s;
+}
+
+.animate-cup3{
+    animation: moveCup3 2s;
 }
 
 @keyframes moveUp{
     0%{}
     50%{transform:translateY(-50%);}
+    100%{}
+}
+@keyframes moveBall{
+    0%{}
+    100%{transform:translateY(-50%);}
+}
+@keyframes moveCup1{
+    0%{}
+    50%{left: 44%;}
+    100%{}
+}
+
+@keyframes moveCup3{
+    0%{}
+    50%{right: 44%;}
     100%{}
 }
 
