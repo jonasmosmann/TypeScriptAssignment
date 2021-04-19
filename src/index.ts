@@ -1,12 +1,17 @@
-import { moveBall, moveCup1, moveCup3, moveUp } from "./functions";
-import { startButton } from "./Queryselectors";
+import {  moveBall, moveCup1, moveCup3, moveUp } from "./functions";
+import { ball, cup3, startButton } from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
 gameStart();
 
+
 function gameStart():void{
     startButton.addEventListener("click", moveUp);
-    startButton.addEventListener("click", moveBall);
-    startButton.addEventListener("click", moveCup1);
-    startButton.addEventListener("click", moveCup3);
+    startButton.addEventListener("click", ()=>{setTimeout(moveBall,1200)});
+    startButton.addEventListener("click", ()=>{setTimeout(moveCup1,2800)});
+    startButton.addEventListener("click", ()=>{setTimeout(moveCup3,2800)});
 }
+
+setTimeout( function ramdomBallPosition():void{
+
+},5000);
