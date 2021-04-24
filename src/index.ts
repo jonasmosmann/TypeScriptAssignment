@@ -11,9 +11,10 @@ function gameStart():void{
     startButton.addEventListener("click", ()=>{setTimeout(moveBall,1200)});
     startButton.addEventListener("click", ()=>{setTimeout(moveCup1,2800)});
     startButton.addEventListener("click", ()=>{setTimeout(moveCup3,2800)});
+    startButton.addEventListener("click", ()=>{setTimeout(randomBallPosition,5000)});
 }
 
-setTimeout( function randomBallPosition(e:UIEvent):void{
+function randomBallPosition(e:UIEvent):void{
 switch(randomizer){
     case 1: cup1.appendChild(ball);
     break;
@@ -25,4 +26,4 @@ switch(randomizer){
     break;
 }
 ball.style.top="60%";
-},5000);
+}
