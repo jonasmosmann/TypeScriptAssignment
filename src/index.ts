@@ -1,10 +1,10 @@
-import {  moveBall, moveCup1, moveCup3, moveUp } from "./functions";
+import {  moveBall, moveCup1, moveCup3, moveUp, selectCup } from "./functions";
 import { ball, cup1, cup2,cup3,startButton,} from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
 gameStart();
 randomizer;
-
+selectCup();
 
 function gameStart():void{
     startButton.addEventListener("click", moveUp);
@@ -27,3 +27,4 @@ switch(randomizer){
 }
 ball.style.top="60%";
 }
+
