@@ -1,9 +1,12 @@
-import { ball, cup1,cup2, cup3,} from "./Queryselectors";
+import { ball, cup1,cup2, cup3, startButton,} from "./Queryselectors";
 
-export let selectedCup: String;
+export let selectedCup: HTMLElement;
 
 export function moveUp(e:UIEvent):void{
     cup2.classList.add("animate-cup2");
+    startButton.disabled=true;
+    startButton.style.backgroundColor="grey";
+    startButton.innerHTML="Pick a Cup!"
     }
 
     export function moveBall(e:UIEvent):void{
@@ -16,26 +19,40 @@ export function moveUp(e:UIEvent):void{
                     cup3.classList.add("animate-cup3");
                     }   
    
-                   /* export function selectChoice(e:Event) {
-                        CupNumber = (e.target as HTMLElement).id;
-                        console.log(CupNumber);
-                    }*/
-                   export function selectCup(){
-                    cup1.addEventListener("click", cup1func);
-                    cup2.addEventListener("click", cup2func);
-                    cup3.addEventListener("click", cup3func);
+                   export function selectCup():void{
+                    cup1.addEventListener("click", ()=>{
+                        selectedCup=cup1
+                        cup2.classList.remove("selected")
+                        cup3.classList.remove("selected")
+                        cup1.classList.add("selected");
+                    });
+                    cup2.addEventListener("click", ()=>{
+                        selectedCup=cup2
+                        cup1.classList.remove("selected")
+                        cup3.classList.remove("selected")
+                        cup2.classList.add("selected");
+                    });
+                    cup3.addEventListener("click", ()=>{
+                        selectedCup=cup3
+                        cup1.classList.remove("selected")
+                        cup2.classList.remove("selected")
+                        cup3.classList.add("selected");
+                    });
+
                    }
 
-                    export function cup1func() {
-                        selectedCup="cup1";
-                        console.log(selectedCup);
-                     }
+                   export function showSelectedCup(selectedCup:HTMLElement) {
+            
+                    selectedCup.classList.add(".selected");
+                }
 
-                     export function cup2func() {
-                        selectedCup="cup2";
-                        console.log(selectedCup);
-                     }
-                     export function cup3func() {
-                        selectedCup="cup3";
-                        console.log(selectedCup);
-                     }
+                /*function removeSelectedCup() {
+                        choice.classList.remove("bordered");
+                        choice.parentElement.classList.remove("selected");
+                    }*/
+                    
+                   
+
+
+
+            

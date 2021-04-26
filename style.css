@@ -92,3 +92,7 @@ h1{
     border-radius: 10px;
 
 }
+
+.selected{
+    background-color: indigo;
+}
