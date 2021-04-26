@@ -1,6 +1,7 @@
 import { allCups, ball, cup1,cup2, cup3, startButton,} from "./Queryselectors";
+import { randomizer } from "./randomizer";
 
-export let selectedCup: HTMLDivElement;
+export let selectedCup: number; //wie überschreibe ich die Variablen?
 
 export function moveUp(e:UIEvent):void{
     cup2.classList.add("animate-cup2");
@@ -18,23 +19,23 @@ export function moveUp(e:UIEvent):void{
                     }   
    
                    export function selectCup():void{
-                       allCups.classList.add("hoverCup") //wieso funktioniert es nicht
+                       allCups.classList.add("hoverCup") //wieso funktioniert es nicht?
                     cup1.addEventListener("click", ()=>{
-                        selectedCup=cup1
+                        selectedCup=1;
                         cup2.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup1.classList.add("selected");
                         activateStartButton();
                     });
                     cup2.addEventListener("click", ()=>{
-                        selectedCup=cup2
+                        selectedCup=2;                   //Wie lege ich diese Variable fest
                         cup1.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup2.classList.add("selected");
                         activateStartButton();
                     });
                     cup3.addEventListener("click", ()=>{
-                        selectedCup=cup3
+                        selectedCup=3;
                         cup1.classList.remove("selected")
                         cup2.classList.remove("selected")
                         cup3.classList.add("selected");
@@ -53,16 +54,28 @@ export function moveUp(e:UIEvent):void{
                     startButton.innerHTML = "Chose Cup";
                     startButton.style.backgroundColor="#ffffff";
                     startButton.disabled = false;
-                    startButton.addEventListener("click", zeigeErgebnis);
+                    
+                    startButton.addEventListener("click", showResult);
                 
                 }
 
-                function zeigeErgebnis(){
-                    ball.style.position="fixed"
+                function showResult(){
                     cup1.style.top="50px"
                     cup2.style.top="50px"
                     cup3.style.top="50px"
+                    compareResult();
                 }
+
+                function compareResult(){
+                    if(selectedCup==randomizer){
+                        console.log("you win");
+                    }
+                    else{
+                        console.log("you lose");
+                    }
+                }
+
+                
 
 
                 /*
