@@ -101,5 +101,5 @@ h1{
 
 .hoverCup :hover{
 cursor: pointer;
-background-color: khaki;
+transform: scale(1.05);
 }

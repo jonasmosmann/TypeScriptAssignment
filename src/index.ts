@@ -12,7 +12,8 @@ function gameStart():void{
     startButton.addEventListener("click", ()=>{setTimeout(moveCup1,2800)});
     startButton.addEventListener("click", ()=>{setTimeout(moveCup3,2800)});
     startButton.addEventListener("click", ()=>{setTimeout(randomBallPosition,5000)});
-    selectCup();
+
+    startButton.addEventListener("click", ()=>{setTimeout(selectCup,5000)});// Wie mache ich es eleganter ?
 }
 
 function randomBallPosition(e:UIEvent):void{

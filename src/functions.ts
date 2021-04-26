@@ -18,7 +18,7 @@ export function moveUp(e:UIEvent):void{
                     }   
    
                    export function selectCup():void{
-                       allCups.classList.add("hoverCup")
+                       allCups.classList.add("hoverCup") //wieso funktioniert es nicht
                     cup1.addEventListener("click", ()=>{
                         selectedCup=cup1
                         cup2.classList.remove("selected")
@@ -53,9 +53,18 @@ export function moveUp(e:UIEvent):void{
                     startButton.innerHTML = "Chose Cup";
                     startButton.style.backgroundColor="#ffffff";
                     startButton.disabled = false;
-                    //startButton.onclick = playTheGame;
+                    startButton.addEventListener("click", zeigeErgebnis);
                 
                 }
+
+                function zeigeErgebnis(){
+                    ball.style.position="fixed"
+                    cup1.style.top="50px"
+                    cup2.style.top="50px"
+                    cup3.style.top="50px"
+                }
+
+
                 /*
                 export function selectCup(e:UIEvent) {
                     selectedChoice = e.target.id;
