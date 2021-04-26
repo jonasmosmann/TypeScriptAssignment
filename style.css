@@ -93,6 +93,13 @@ h1{
 
 }
 
+
+
 .selected{
     background-color: indigo;
+}
+
+.hoverCup :hover{
+cursor: pointer;
+background-color: khaki;
 }

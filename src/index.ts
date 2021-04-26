@@ -4,7 +4,7 @@ import { randomizer } from "./randomizer";
 
 gameStart();
 randomizer;
-selectCup();
+
 
 function gameStart():void{
     startButton.addEventListener("click", moveUp);
@@ -12,6 +12,7 @@ function gameStart():void{
     startButton.addEventListener("click", ()=>{setTimeout(moveCup1,2800)});
     startButton.addEventListener("click", ()=>{setTimeout(moveCup3,2800)});
     startButton.addEventListener("click", ()=>{setTimeout(randomBallPosition,5000)});
+    selectCup();
 }
 
 function randomBallPosition(e:UIEvent):void{
