@@ -19,7 +19,9 @@ export function moveUp(e:UIEvent):void{
                     }   
    
                    export function selectCup():void{
-                       allCups.classList.add("hoverCup") //wieso funktioniert es nicht?
+                       allCups.forEach(element => {
+                           element.classList.add("hoverCup");
+                       });
                     cup1.addEventListener("click", ()=>{
                         selectedCup=1;
                         cup2.classList.remove("selected")
