@@ -18,14 +18,11 @@ function gameStart():void{
 
 function randomBallPosition(e:UIEvent):void{
 switch(randomizer){
-    case 1: ball.style.left="30%"; console.log("case 1") //Wie löse ich das anders ?
+    case 1: ball.style.left="30%"; 
     break;
-
-    case 2: ball.style.left="50%"; console.log("case 2") 
+    case 2: ball.style.left="50%";  
+    break
+    case 3: ball.style.left="70%"; 
     break;
-
-    case 3: ball.style.left="70%"; console.log("case 3") 
-    break;
-}
-}
+}}
 

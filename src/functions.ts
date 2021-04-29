@@ -1,7 +1,7 @@
 import { allCups, ball, cup1,cup2, cup3, startButton,} from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
-export let selectedCup: number; //wie überschreibe ich die Variablen?
+export let selectedCup: HTMLDivElement; //wie überschreibe ich die Variablen?
 
 export function moveUp(e:UIEvent):void{
     cup2.classList.add("animate-cup2");
@@ -23,21 +23,21 @@ export function moveUp(e:UIEvent):void{
                            element.classList.add("hoverCup");
                        });
                     cup1.addEventListener("click", ()=>{
-                        selectedCup=1;
+                        selectedCup=cup1;
                         cup2.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup1.classList.add("selected");
                         activateStartButton();
                     });
                     cup2.addEventListener("click", ()=>{
-                        selectedCup=2;                   //Wie lege ich diese Variable fest
+                        selectedCup=cup2;                   //Wie lege ich diese Variable fest
                         cup1.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup2.classList.add("selected");
                         activateStartButton();
                     });
                     cup3.addEventListener("click", ()=>{
-                        selectedCup=3;
+                        selectedCup=cup3;
                         cup1.classList.remove("selected")
                         cup2.classList.remove("selected")
                         cup3.classList.add("selected");
@@ -62,20 +62,21 @@ export function moveUp(e:UIEvent):void{
                 }
 
                 function showResult(){
-                    cup1.style.top="50px"
-                    cup2.style.top="50px"
-                    cup3.style.top="50px"
-                    compareResult();
+                    selectedCup.style.top="50px"
+                  
+                   compareResult();
                 }
 
                 function compareResult(){
-                    if(selectedCup==randomizer){
+                    if(selectedCup===cup1&&randomizer===1){
                         console.log("you win");
-                    }
-                    else{
+                    }else if(selectedCup===cup2&&randomizer===2){
+                        console.log("you win");
+                    }else if(selectedCup===cup3&&randomizer===3){
+                        console.log("you win");
+                    }else{
                         console.log("you lose");
-                    }
-                }
+                    }}
 
                 
 
