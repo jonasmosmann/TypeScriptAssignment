@@ -58,8 +58,17 @@ export function moveUp(e:UIEvent):void{
                     startButton.disabled = false;
                     
                     startButton.addEventListener("click", showResult);
-                
+                    startButton.addEventListener("click", restartButton);
                 }
+
+                    function restartButton(){
+                        allCups.forEach(element => {
+                            element.classList.remove("hoverCup");
+                            cup1.removeEventListener;
+                            cup2.removeEventListener;
+                            cup3.removeEventListener;
+                        });
+                    }
 
                 function showResult(){
                     selectedCup.style.top="50px"
