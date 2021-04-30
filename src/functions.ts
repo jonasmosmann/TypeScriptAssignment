@@ -55,11 +55,14 @@ export function moveUp(e:UIEvent):void{
                     startButton.style.backgroundColor="#ffffff";
                     startButton.disabled = false;
                     
-                    startButton.addEventListener("click", showResult);
+                    startButton.addEventListener("click", showResult, {once: true});
                 }
 
                export function setResultText(text:string){
                     resultText.innerHTML=text;
+                }
+                export function resetResultText(){
+                    resultText.innerHTML="";
                 }
 
                     
@@ -68,11 +71,21 @@ export function moveUp(e:UIEvent):void{
                         cup1.removeEventListener("click", cup1Selected);
                         cup2.removeEventListener("click", cup2Selected);
                         cup3.removeEventListener("click", cup3Selected);
+
+                        cup1.classList.remove("animate-cup1");
+                        cup2.classList.remove("animate-cup2");
+                        cup3.classList.remove("animate-cup3");
                         
                         allCups.forEach(element => {
                             element.classList.remove("selected");  
                             element.classList.remove("hoverCup");
                         });
+                    }
+
+                    export function repositionItems(){
+                        ball.style.top="550px";
+                        ball.style.left="50%"
+                        selectedCup.style.top=""
                     }
 
               

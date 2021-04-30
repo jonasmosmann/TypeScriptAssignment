@@ -1,4 +1,4 @@
-import {   cup1Selected, cup2Selected, cup3Selected, moveBall, moveCup1, moveCup3, moveUp, removeClasses, selectedCup, setResultText } from "./functions";
+import {   cup1Selected, cup2Selected, cup3Selected, moveBall, moveCup1, moveCup3, moveUp, removeClasses, repositionItems, resetResultText, selectedCup, setResultText } from "./functions";
 import { allCups, ball, cup1, cup2,cup3,resultText,startButton,} from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
@@ -6,6 +6,7 @@ gameStart();
 
 
 function gameStart():void{
+    resetResultText();
     randomizer;
     startButton.addEventListener("click", moveUp, {once: true});
     startButton.addEventListener("click", ()=>{setTimeout(moveBall,1200)}, {once: true});
@@ -54,8 +55,11 @@ function compareResult(){
     }}
 
     function restartButton():void{
+        
         removeClasses();
         startButton.innerHTML = "Restart the Game";
+        startButton.addEventListener("click", repositionItems, {once: true});
         startButton.addEventListener("click", gameStart, {once: true});
+        
      }
 
