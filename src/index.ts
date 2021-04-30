@@ -1,7 +1,8 @@
 import {   cup1Selected, cup2Selected, cup3Selected, moveBall, moveCup1, moveCup3, moveUp, removeClasses, repositionItems, resetResultText, selectedCup, setResultText } from "./functions";
-import { allCups, ball, cup1, cup2,cup3,resultText,startButton,} from "./Queryselectors";
+import { allCups, ball, cup1, cup2,cup3,losingScore,resultText,startButton, winningScore,} from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
+const results = { lost: 0, won: 0};
 gameStart();
 
 
@@ -46,12 +47,20 @@ export function showResult(){
 function compareResult(){
     if(selectedCup===cup1&&randomizer===1){
         setResultText("You win!");
+        results.won += 1;
+        winningScore.innerHTML = results.won;
     }else if(selectedCup===cup2&&randomizer===2){
         setResultText("You win!");
+        results.won += 1;
+        winningScore.innerHTML = results.won;
     }else if(selectedCup===cup3&&randomizer===3){
         setResultText("You win!");
+        results.won += 1;
+        winningScore.innerHTML = results.won;
     }else{
         setResultText("You lose!");
+        results.lost += 1;
+        losingScore.innerHTML = results.lost;
     }}
 
     function restartButton():void{

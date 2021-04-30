@@ -112,3 +112,15 @@ transform: scale(1.05);
     top: 650px;
     font-size: 4em;
 }
+#wins{
+    top: 135px;
+    position: absolute;
+    left: 31%;
+    text-align: center;
+}
+#losses{
+    top: 135px;
+    position: absolute;
+    right: 31%;
+    text-align: center;
+}
