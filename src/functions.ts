@@ -22,29 +22,34 @@ export function moveUp(e:UIEvent):void{
                        allCups.forEach(element => {
                            element.classList.add("hoverCup");
                        });
-                    cup1.addEventListener("click", ()=>{
+                    cup1.addEventListener("click", cup1Selected);
+                    cup2.addEventListener("click", cup2Selected);
+                    cup3.addEventListener("click", cup3Selected);
+                   }
+
+                    function cup1Selected(){
                         selectedCup=cup1;
                         cup2.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup1.classList.add("selected");
                         activateStartButton();
-                    });
-                    cup2.addEventListener("click", ()=>{
-                        selectedCup=cup2;                   //Wie lege ich diese Variable fest
+                    }
+                    function cup2Selected(){
+                        selectedCup=cup2;
                         cup1.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup2.classList.add("selected");
                         activateStartButton();
-                    });
-                    cup3.addEventListener("click", ()=>{
+                    }
+                    function cup3Selected(){
                         selectedCup=cup3;
                         cup1.classList.remove("selected")
                         cup2.classList.remove("selected")
                         cup3.classList.add("selected");
                         activateStartButton();
-                    });
+                    }
 
-                   }
+                   
 
                    function disableStartButton(){
                     startButton.disabled=true;
@@ -58,22 +63,23 @@ export function moveUp(e:UIEvent):void{
                     startButton.disabled = false;
                     
                     startButton.addEventListener("click", showResult);
-                    startButton.addEventListener("click", restartButton);
                 }
 
                     function restartButton(){
+                        cup1.removeEventListener("click", cup1Selected);
+                    cup2.removeEventListener("click", cup2Selected);
+                    cup3.removeEventListener("click", cup3Selected);
+                    startButton.removeEventListener("click", showResult);
+
                         allCups.forEach(element => {
-                            element.classList.remove("hoverCup");
-                            cup1.removeEventListener;
-                            cup2.removeEventListener;
-                            cup3.removeEventListener;
+                            element.classList.remove("hoverCup");  
                         });
                     }
 
                 function showResult(){
                     selectedCup.style.top="50px"
-                  
                    compareResult();
+                   restartButton();
                 }
 
                 function compareResult(){
