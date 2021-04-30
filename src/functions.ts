@@ -1,4 +1,4 @@
-import { allCups, ball, cup1,cup2, cup3, startButton,} from "./Queryselectors";
+import { allCups, ball, cup1,cup2, cup3, resultText, startButton,} from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
 export let selectedCup: HTMLDivElement; //wie überschreibe ich die Variablen?
@@ -65,7 +65,7 @@ export function moveUp(e:UIEvent):void{
                     startButton.addEventListener("click", showResult);
                 }
 
-                    function restartButton(){
+                    function restartButton():void{
                         cup1.removeEventListener("click", cup1Selected);
                     cup2.removeEventListener("click", cup2Selected);
                     cup3.removeEventListener("click", cup3Selected);
@@ -84,14 +84,18 @@ export function moveUp(e:UIEvent):void{
 
                 function compareResult(){
                     if(selectedCup===cup1&&randomizer===1){
-                        console.log("you win");
+                        setResultText("You win!");
                     }else if(selectedCup===cup2&&randomizer===2){
-                        console.log("you win");
+                        setResultText("You win!");
                     }else if(selectedCup===cup3&&randomizer===3){
-                        console.log("you win");
+                        setResultText("You win!");
                     }else{
-                        console.log("you lose");
+                        setResultText("You lose!");
                     }}
+
+                    function setResultText(text:string){
+                        resultText.innerHTML=text;
+                    }
 
                 
 

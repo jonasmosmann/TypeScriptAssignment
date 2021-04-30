@@ -103,3 +103,12 @@ h1{
 cursor: pointer;
 transform: scale(1.05);
 }
+
+#result-text{
+    position:absolute;
+    z-index: 1000;
+    left: 50%;
+    transform: translate( -50%);
+    top: 650px;
+    font-size: 4em;
+}
