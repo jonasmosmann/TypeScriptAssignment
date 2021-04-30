@@ -1,3 +1,4 @@
+import { showResult } from "./index";
 import { allCups, ball, cup1,cup2, cup3, resultText, startButton,} from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
@@ -18,30 +19,22 @@ export function moveUp(e:UIEvent):void{
                     cup3.classList.add("animate-cup3");
                     }   
    
-                   export function selectCup():void{
-                       allCups.forEach(element => {
-                           element.classList.add("hoverCup");
-                       });
-                    cup1.addEventListener("click", cup1Selected);
-                    cup2.addEventListener("click", cup2Selected);
-                    cup3.addEventListener("click", cup3Selected);
-                   }
 
-                    function cup1Selected(){
+                    export function cup1Selected(){
                         selectedCup=cup1;
                         cup2.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup1.classList.add("selected");
                         activateStartButton();
                     }
-                    function cup2Selected(){
+                    export function cup2Selected(){
                         selectedCup=cup2;
                         cup1.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup2.classList.add("selected");
                         activateStartButton();
                     }
-                    function cup3Selected(){
+                    export function cup3Selected(){
                         selectedCup=cup3;
                         cup1.classList.remove("selected")
                         cup2.classList.remove("selected")
@@ -65,12 +58,13 @@ export function moveUp(e:UIEvent):void{
                     startButton.addEventListener("click", showResult);
                 }
 
-                    function restartButton():void{
-                       removeClasses();
-                       startButton.innerHTML = "Restart the Game";
-                    }
+               export function setResultText(text:string){
+                    resultText.innerHTML=text;
+                }
 
-                    function removeClasses(){
+                    
+
+                    export function removeClasses(){
                         cup1.removeEventListener("click", cup1Selected);
                         cup2.removeEventListener("click", cup2Selected);
                         cup3.removeEventListener("click", cup3Selected);
@@ -81,26 +75,7 @@ export function moveUp(e:UIEvent):void{
                         });
                     }
 
-                function showResult(){
-                    selectedCup.style.top="50px"
-                   compareResult();
-                   restartButton();
-                }
-
-                function compareResult(){
-                    if(selectedCup===cup1&&randomizer===1){
-                        setResultText("You win!");
-                    }else if(selectedCup===cup2&&randomizer===2){
-                        setResultText("You win!");
-                    }else if(selectedCup===cup3&&randomizer===3){
-                        setResultText("You win!");
-                    }else{
-                        setResultText("You lose!");
-                    }}
-
-                    function setResultText(text:string){
-                        resultText.innerHTML=text;
-                    }
+              
 
                 
 
