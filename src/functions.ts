@@ -66,13 +66,18 @@ export function moveUp(e:UIEvent):void{
                 }
 
                     function restartButton():void{
-                        cup1.removeEventListener("click", cup1Selected);
-                    cup2.removeEventListener("click", cup2Selected);
-                    cup3.removeEventListener("click", cup3Selected);
-                    startButton.removeEventListener("click", showResult);
+                       removeClasses();
+                       startButton.innerHTML = "Restart the Game";
+                    }
 
+                    function removeClasses(){
+                        cup1.removeEventListener("click", cup1Selected);
+                        cup2.removeEventListener("click", cup2Selected);
+                        cup3.removeEventListener("click", cup3Selected);
+                        
                         allCups.forEach(element => {
-                            element.classList.remove("hoverCup");  
+                            element.classList.remove("selected");  
+                            element.classList.remove("hoverCup");
                         });
                     }
 
