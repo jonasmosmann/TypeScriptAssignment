@@ -1,8 +1,10 @@
-import { showResult } from "./index";
-import { allCups, ball, cup1,cup2, cup3, resultText, startButton,} from "./Queryselectors";
+import { results, showResult } from "./index";
+import { allCups, ball, cup1,cup2, cup3, losingScore, resultText, startButton, winningScore,} from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
 export let selectedCup: HTMLDivElement; //wie überschreibe ich die Variablen?
+export let wins:any;
+export let losses:any;
 
 export function moveUp(e:UIEvent):void{
     cup2.classList.add("animate-cup2");
@@ -87,6 +89,34 @@ export function moveUp(e:UIEvent):void{
                         ball.style.left="50%"
                         selectedCup.style.top=""
                     }
+
+                    export function saveScore(){
+                        
+                        
+                           wins = results.won.toString();
+                           losses = results.lost.toString();
+                          localStorage.setItem("wins", wins);
+                          localStorage.setItem("losses", losses);
+                      }
+
+                    export function getScore(){
+                        wins = localStorage.getItem("wins");
+                        losses = localStorage.getItem("losses");
+                        /*if((wins==null||wins=="null")&&(losses==null||losses=="null")){
+                            wins=0;
+                            losses=0;
+                        }
+                        else if(wins==null||wins=="null"){
+                            wins=0;
+                        }else if(losses==null||losses=="null"){
+                            losses=0;
+                        }*/
+                        results.won=parseInt(wins);
+                        results.lost=parseInt(losses);
+                        winningScore.innerHTML = results.won;
+                        losingScore.innerHTML = results.lost;
+                        
+                    }  
 
               
 

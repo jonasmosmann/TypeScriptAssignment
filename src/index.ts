@@ -1,12 +1,13 @@
-import {   cup1Selected, cup2Selected, cup3Selected, moveBall, moveCup1, moveCup3, moveUp, removeClasses, repositionItems, resetResultText, selectedCup, setResultText } from "./functions";
+import {   cup1Selected, cup2Selected, cup3Selected, getScore, moveBall, moveCup1, moveCup3, moveUp, removeClasses, repositionItems, resetResultText, saveScore, selectedCup, setResultText } from "./functions";
 import { allCups, ball, cup1, cup2,cup3,losingScore,resultText,startButton, winningScore,} from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
-const results = { lost: 0, won: 0};
+export const results = { lost: 0, won: 0};
 gameStart();
 
 
 function gameStart():void{
+    getScore();
     resetResultText();
     randomizer;
     startButton.addEventListener("click", moveUp, {once: true});
@@ -60,8 +61,10 @@ function compareResult(){
     }else{
         setResultText("You lose!");
         results.lost += 1;
-        losingScore.innerHTML = results.lost;
-    }}
+        winningScore.innerHTML = results.won;
+    }
+    saveScore();
+}
 
     function restartButton():void{
         
