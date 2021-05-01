@@ -6,7 +6,9 @@ export const results = { lost: 0, won: 0};
 gameStart();
 
 
+
 function gameStart():void{
+    
     getScore();
     resetResultText();
     randomizer;
@@ -61,7 +63,7 @@ function compareResult(){
     }else{
         setResultText("You lose!");
         results.lost += 1;
-        winningScore.innerHTML = results.won;
+        losingScore.innerHTML = results.lost;
     }
     saveScore();
 }

@@ -91,8 +91,6 @@ export function moveUp(e:UIEvent):void{
                     }
 
                     export function saveScore(){
-                        
-                        
                            wins = results.won.toString();
                            losses = results.lost.toString();
                           localStorage.setItem("wins", wins);
@@ -102,7 +100,7 @@ export function moveUp(e:UIEvent):void{
                     export function getScore(){
                         wins = localStorage.getItem("wins");
                         losses = localStorage.getItem("losses");
-                        /*if((wins==null||wins=="null")&&(losses==null||losses=="null")){
+                        if((wins==null||wins=="null")&&(losses==null||losses=="null")){
                             wins=0;
                             losses=0;
                         }
@@ -110,7 +108,7 @@ export function moveUp(e:UIEvent):void{
                             wins=0;
                         }else if(losses==null||losses=="null"){
                             losses=0;
-                        }*/
+                        }
                         results.won=parseInt(wins);
                         results.lost=parseInt(losses);
                         winningScore.innerHTML = results.won;
