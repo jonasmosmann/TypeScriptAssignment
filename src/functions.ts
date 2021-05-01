@@ -6,37 +6,37 @@ export let selectedCup: HTMLDivElement; //wie überschreibe ich die Variablen?
 export let wins:any;
 export let losses:any;
 
-export function moveUp(e:UIEvent):void{
+export function moveUp():void{
     cup2.classList.add("animate-cup2");
     disableStartButton();
     }
 
-    export function moveBall(e:UIEvent):void{
+    export function moveBall():void{
        ball.style.top= "400px";}
 
-            export function moveCup1(e:UIEvent):void{
+            export function moveCup1():void{
                 cup1.classList.add("animate-cup1");
                 }    
-                export function moveCup3(e:UIEvent):void{
+                export function moveCup3():void{
                     cup3.classList.add("animate-cup3");
                     }   
    
 
-                    export function cup1Selected(){
+                    export function cup1Selected():void{
                         selectedCup=cup1;
                         cup2.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup1.classList.add("selected");
                         activateStartButton();
                     }
-                    export function cup2Selected(){
+                    export function cup2Selected():void{
                         selectedCup=cup2;
                         cup1.classList.remove("selected")
                         cup3.classList.remove("selected")
                         cup2.classList.add("selected");
                         activateStartButton();
                     }
-                    export function cup3Selected(){
+                    export function cup3Selected():void{
                         selectedCup=cup3;
                         cup1.classList.remove("selected")
                         cup2.classList.remove("selected")
@@ -60,16 +60,16 @@ export function moveUp(e:UIEvent):void{
                     startButton.addEventListener("click", showResult, {once: true});
                 }
 
-               export function setResultText(text:string){
+               export function setResultText(text:string):void{
                     resultText.innerHTML=text;
                 }
-                export function resetResultText(){
+                export function resetResultText():void{
                     resultText.innerHTML="";
                 }
 
                     
 
-                    export function removeClasses(){
+                    export function removeClasses():void{
                         cup1.removeEventListener("click", cup1Selected);
                         cup2.removeEventListener("click", cup2Selected);
                         cup3.removeEventListener("click", cup3Selected);
@@ -84,7 +84,7 @@ export function moveUp(e:UIEvent):void{
                         });
                     }
 
-                    export function repositionItems(){
+                    export function repositionItems():void{
                         ball.style.top="550px";
                         ball.style.left="50%"
                         selectedCup.style.top=""

@@ -4,14 +4,14 @@ import { winningScore, losingScore } from "./Queryselectors";
 export let wins:any;
 export let losses:any;
 
-export function saveScore(){
+export function saveScore():void{
     wins = results.won.toString();
     losses = results.lost.toString();
    localStorage.setItem("wins", wins);
    localStorage.setItem("losses", losses);
 }
 
-export function getScore(){
+export function getScore():void{
  wins = localStorage.getItem("wins");
  losses = localStorage.getItem("losses");
  if((wins==null||wins=="null")&&(losses==null||losses=="null")){
@@ -27,5 +27,4 @@ export function getScore(){
  results.lost=parseInt(losses);
  winningScore.innerHTML = results.won;
  losingScore.innerHTML = results.lost;
- 
 }  

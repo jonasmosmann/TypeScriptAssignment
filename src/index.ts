@@ -21,7 +21,7 @@ function gameStart():void{
     
 }
 
-function randomBallPosition(e:UIEvent):void{
+function randomBallPosition():void{
 switch(randomizer){
     case 1: ball.style.left="30%"; 
     break;
@@ -48,7 +48,7 @@ export function showResult(){
    restartButton();
 }
 
-function compareResult(){
+function compareResult():void{
     if(selectedCup===cup1&&randomizer===1){
         setResultText("You win!");
         results.won += 1;
