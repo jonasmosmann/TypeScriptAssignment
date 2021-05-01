@@ -1,4 +1,5 @@
-import {   cup1Selected, cup2Selected, cup3Selected, getScore, moveBall, moveCup1, moveCup3, moveUp, removeClasses, repositionItems, resetResultText, saveScore, selectedCup, setResultText } from "./functions";
+import {   cup1Selected, cup2Selected, cup3Selected, moveBall, moveCup1, moveCup3, moveUp, removeClasses, repositionItems, resetResultText, selectedCup, setResultText } from "./functions";
+import { getScore, saveScore } from "./localStorage";
 import { allCups, ball, cup1, cup2,cup3,losingScore,resultText,startButton, winningScore,} from "./Queryselectors";
 import { randomizer } from "./randomizer";
 
