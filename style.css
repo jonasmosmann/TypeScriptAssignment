@@ -1,10 +1,17 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
 body{
-    background-color: rgb(178, 206, 211);
+    background-color: rgb(155, 160, 167);
 }
 
 h1{
     text-align: center;
     font-size: 4em;
+    background-color:  rgb(174, 179, 187);
+}
+h3{
+    text-decoration: underline 4px solid black;
 }
 
 .wrapper{
@@ -66,13 +73,13 @@ h1{
 }
 @keyframes moveCup1{
     0%{}
-    50%{left: 44%;}
+    50%{left: 50%;transform: translate( -50%);}
     100%{}
 }
 
 @keyframes moveCup3{
     0%{}
-    50%{right: 44%;}
+    50%{right: 50%;transform: translate( 50%);}
     100%{}
 }
 
@@ -96,7 +103,7 @@ h1{
 
 
 .selected{
-    background-color: indigo;
+    background-color:rgb(167, 171, 177);
 }
 
 .hoverCup :hover{
@@ -115,12 +122,12 @@ transform: scale(1.05);
 #wins{
     top: 135px;
     position: absolute;
-    left: 31%;
+    left: 30.5%;
     text-align: center;
 }
 #losses{
     top: 135px;
     position: absolute;
-    right: 31%;
+    right: 29.5%;
     text-align: center;
 }

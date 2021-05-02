@@ -23,11 +23,11 @@ function gameStart():void{
 
 function randomBallPosition():void{
 switch(randomizer){
-    case 1: ball.style.left="30%"; 
+    case 1: ball.style.left="31%"; 
     break;
     case 2: ball.style.left="50%";  
     break
-    case 3: ball.style.left="70%"; 
+    case 3: ball.style.left="69%"; 
     break;
 }
 selectCup();
@@ -43,7 +43,7 @@ function selectCup():void{
 }
 
 export function showResult(){
-    selectedCup.style.top="50px"
+    selectedCup.style.top="70px"
    compareResult();
    restartButton();
 }

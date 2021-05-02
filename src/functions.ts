@@ -28,6 +28,7 @@ export function moveUp():void{
                         cup3.classList.remove("selected")
                         cup1.classList.add("selected");
                         activateStartButton();
+                        startButton.innerHTML = "Chose Cup 1";
                     }
                     export function cup2Selected():void{
                         selectedCup=cup2;
@@ -35,6 +36,7 @@ export function moveUp():void{
                         cup3.classList.remove("selected")
                         cup2.classList.add("selected");
                         activateStartButton();
+                        startButton.innerHTML = "Chose Cup 2";
                     }
                     export function cup3Selected():void{
                         selectedCup=cup3;
@@ -42,21 +44,20 @@ export function moveUp():void{
                         cup2.classList.remove("selected")
                         cup3.classList.add("selected");
                         activateStartButton();
+                        startButton.innerHTML = "Chose Cup 3";
                     }
 
                    
 
                    function disableStartButton(){
                     startButton.disabled=true;
-                    startButton.style.backgroundColor="grey";
+                    startButton.style.backgroundColor="rgb(174, 179, 187)";
                     startButton.innerHTML="Pick a Cup!"
                    }
 
                    function activateStartButton() {
-                    startButton.innerHTML = "Chose Cup";
                     startButton.style.backgroundColor="#ffffff";
                     startButton.disabled = false;
-                    
                     startButton.addEventListener("click", showResult, {once: true});
                 }
 
