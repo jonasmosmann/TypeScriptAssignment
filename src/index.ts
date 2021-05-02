@@ -1,18 +1,18 @@
 import {   cup1Selected, cup2Selected, cup3Selected, moveBall, moveCup1, moveCup3, moveUp, removeClasses, repositionItems, resetResultText, selectedCup, setResultText } from "./functions";
 import { getScore, saveScore } from "./localStorage";
 import { allCups, ball, cup1, cup2,cup3,losingScore,resultText,startButton, winningScore,} from "./Queryselectors";
-import { randomizer } from "./randomizer";
+import {  randomizer } from "./randomizer";
 
 export const results = { lost: 0, won: 0};
+export let randomNumber:number;
 gameStart();
 
 
 
 function gameStart():void{
-    
+    randomNumber = randomizer();
     getScore();
     resetResultText();
-    randomizer;
     startButton.addEventListener("click", moveUp, {once: true});
     startButton.addEventListener("click", ()=>{setTimeout(moveBall,1200)}, {once: true});
     startButton.addEventListener("click", ()=>{setTimeout(moveCup1,2800)}, {once: true});
@@ -22,7 +22,7 @@ function gameStart():void{
 }
 
 function randomBallPosition():void{
-switch(randomizer){
+switch(randomNumber){
     case 1: ball.style.left="31%"; 
     break;
     case 2: ball.style.left="50%";  
@@ -49,15 +49,15 @@ export function showResult(){
 }
 
 function compareResult():void{
-    if(selectedCup===cup1&&randomizer===1){
+    if(selectedCup===cup1&&randomNumber===1){
         setResultText("You win!");
         results.won += 1;
         winningScore.innerHTML = results.won;
-    }else if(selectedCup===cup2&&randomizer===2){
+    }else if(selectedCup===cup2&&randomNumber===2){
         setResultText("You win!");
         results.won += 1;
         winningScore.innerHTML = results.won;
-    }else if(selectedCup===cup3&&randomizer===3){
+    }else if(selectedCup===cup3&&randomNumber===3){
         setResultText("You win!");
         results.won += 1;
         winningScore.innerHTML = results.won;

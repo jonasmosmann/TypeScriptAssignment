@@ -1,6 +1,5 @@
 import { results, showResult } from "./index";
 import { allCups, ball, cup1,cup2, cup3, losingScore, resultText, startButton, winningScore,} from "./Queryselectors";
-import { randomizer } from "./randomizer";
 
 export let selectedCup: HTMLDivElement; //wie überschreibe ich die Variablen?
 export let wins:any;
