@@ -1,8 +1,8 @@
 import { results } from "./index";
 import { winningScore, losingScore } from "./Queryselectors";
 
-export let wins:any;
-export let losses:any;
+let wins:any;
+let losses:any;
 
 export function saveScore():void{
     wins = results.won.toString();

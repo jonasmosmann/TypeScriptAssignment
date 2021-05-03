@@ -2,8 +2,6 @@ import { correctCup, showResult } from "./index";
 import {allCups,ball,cup1,cup2,cup3,resultText,startButton,} from "./Queryselectors";
 
 export let selectedCup: HTMLDivElement; 
-export let wins: any;
-export let losses: any;
 
 export function moveUp(): void {
   cup2.classList.add("animate-cup2");

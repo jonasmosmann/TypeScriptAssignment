@@ -46,15 +46,15 @@ export function showResult(){
 }
 
 function compareResult():void{
-    if(selectedCup===cup1&&randomNumber===1){
+    if(selectedCup===correctCup){
         setResultText("You win!");
         results.won += 1;
         winningScore.innerHTML = results.won;
-    }else if(selectedCup===cup2&&randomNumber===2){
+    }else if(selectedCup===correctCup){
         setResultText("You win!");
         results.won += 1;
         winningScore.innerHTML = results.won;
-    }else if(selectedCup===cup3&&randomNumber===3){
+    }else if(selectedCup===correctCup){
         setResultText("You win!");
         results.won += 1;
         winningScore.innerHTML = results.won;
