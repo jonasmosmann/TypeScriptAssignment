@@ -1,10 +1,11 @@
-import {   cup1Selected, cup2Selected, cup3Selected, moveBall, moveCup1, moveCup3, moveUp, removeClasses, repositionItems, resetResultText, selectedCup, setResultText } from "./functions";
+import {   cup1Selected, cup2Selected, cup3Selected, moveBall, moveCup1, moveCup3, moveUp, removeClasses, removeEventListeners, removeHoverEffect, repositionItems, resetResultText, selectedCup, setResultText, showCorrectCup } from "./functions";
 import { getScore, saveScore } from "./localStorage";
 import { allCups, ball, cup1, cup2,cup3,losingScore,startButton, winningScore,} from "./Queryselectors";
 import {  randomizer } from "./randomizer";
 
 export const results = { lost: 0, won: 0};
 export let randomNumber:number;
+export let correctCup:HTMLDivElement;
 gameStart();
 
 function gameStart():void{
@@ -20,11 +21,11 @@ function gameStart():void{
 
 function randomBallPosition():void{
 switch(randomNumber){
-    case 1: ball.style.left="31%"; 
+    case 1: ball.style.left="31%"; correctCup=cup1;
     break;
-    case 2: ball.style.left="50%";  
+    case 2: ball.style.left="50%"; correctCup=cup2;
     break
-    case 3: ball.style.left="69%"; 
+    case 3: ball.style.left="69%"; correctCup=cup3; 
     break;
 }selectCup();
 }
@@ -59,14 +60,17 @@ function compareResult():void{
         winningScore.innerHTML = results.won;
     }else{
         setResultText("You lose!");
+        showCorrectCup();
         results.lost += 1;
         losingScore.innerHTML = results.lost;
     }saveScore();
 }
 
     function restartButton():void{
-        removeClasses();
         startButton.innerHTML = "Restart the Game";
+        removeEventListeners();
+        removeHoverEffect();
+        startButton.addEventListener("click", removeClasses, {once: true});
         startButton.addEventListener("click", repositionItems, {once: true});
         startButton.addEventListener("click", gameStart, {once: true});
      }

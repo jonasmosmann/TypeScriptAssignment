@@ -1,4 +1,4 @@
-import { showResult } from "./index";
+import { correctCup, showResult } from "./index";
 import {allCups,ball,cup1,cup2,cup3,resultText,startButton,} from "./Queryselectors";
 
 export let selectedCup: HTMLDivElement; 
@@ -66,19 +66,32 @@ export function resetResultText(): void {
   resultText.innerHTML = "";
 }
 
-export function removeClasses(): void {
-  cup1.removeEventListener("click", cup1Selected);
-  cup2.removeEventListener("click", cup2Selected);
-  cup3.removeEventListener("click", cup3Selected);
+export function showCorrectCup(){
+    
+    correctCup.classList.add("animate-correct-cup");
+    
+}
 
+export function removeClasses(): void {
   cup1.classList.remove("animate-cup1");
   cup2.classList.remove("animate-cup2");
   cup3.classList.remove("animate-cup3");
-
+  correctCup.classList.remove("animate-correct-cup");
   allCups.forEach((element) => {
     element.classList.remove("selected");
-    element.classList.remove("hoverCup");
   });
+}
+
+export function removeEventListeners(){
+  cup1.removeEventListener("click", cup1Selected);
+  cup2.removeEventListener("click", cup2Selected);
+  cup3.removeEventListener("click", cup3Selected);
+}
+
+export function removeHoverEffect(){
+    allCups.forEach((element) => {
+        element.classList.remove("hoverCup");
+      });
 }
 
 export function repositionItems(): void {

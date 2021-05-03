@@ -27,7 +27,6 @@ h3{
     left: 50%;
     transform: translate( -50%);
     top: 550px;
-    z-index: 1500;
 }
 
 #cup-1, #cup-2, #cup-3{
@@ -64,6 +63,9 @@ h3{
 .animate-cup3{
     animation: moveCup3 2s;
 }
+.animate-correct-cup{
+    animation: moveCorrectCup 3s;
+}
 
 @keyframes moveUp{
     0%{}
@@ -85,6 +87,12 @@ h3{
 @keyframes moveCup3{
     0%{}
     50%{right: 50%;transform: translate( 50%);}
+    100%{}
+}
+
+@keyframes moveCorrectCup{
+    0%{}
+    50%{top: 70px;}
     100%{}
 }
 
