@@ -27,7 +27,6 @@ h3{
     left: 50%;
     transform: translate( -50%);
     top: 550px;
-    z-index: 1500;
 }
 
 #cup-1, #cup-2, #cup-3{
@@ -135,13 +134,13 @@ transform: scale(1.05);
 #wins{
     top: 135px;
     position: absolute;
-    left: 30.5%;
+    left: calc(25% + 85px);
     text-align: center;
 }
 
 #losses{
     top: 135px;
     position: absolute;
-    right: 29.5%;
+    right: calc(25% + 80px);
     text-align: center;
 }

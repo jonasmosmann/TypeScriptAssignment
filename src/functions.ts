@@ -65,9 +65,7 @@ export function resetResultText(): void {
 }
 
 export function showCorrectCup(){
-    
-    correctCup.classList.add("animate-correct-cup");
-    
+  correctCup.classList.add("animate-correct-cup");
 }
 
 export function removeClasses(): void {
