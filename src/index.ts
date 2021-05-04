@@ -1,7 +1,11 @@
-import {   cup1Selected, cup2Selected, cup3Selected, moveBall, moveCup1, moveCup3, moveUp, removeClasses, removeEventListeners, removeHoverEffect, repositionItems, resetResultText, selectedCup, setResultText, showCorrectCup } from "./functions";
+import { moveUp, moveBall, moveCup1, moveCup3, showCorrectCup } from "./animations";
+import { cup1Selected, cup2Selected, cup3Selected, selectedCup } from "./cupSelection";
 import { getScore, saveScore } from "./localStorage";
-import { allCups, ball, cup1, cup2,cup3,losingScore,startButton, winningScore,} from "./Queryselectors";
-import {  randomizer } from "./randomizer";
+import { startButton, ball, cup1, cup2, cup3, allCups, winningScore, losingScore } from "./Queryselectors";
+import { randomizer } from "./randomizer";
+import { removeEventListeners, removeHoverEffect, removeClasses, repositionItems } from "./remove";
+import { resetResultText, setResultText } from "./resultText";
+
 
 export const results = { lost: 0, won: 0};
 export let randomNumber:number;
