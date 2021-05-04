@@ -21,11 +21,11 @@ function gameStart():void{
 
 function randomBallPosition():void{
 switch(randomNumber){
-    case 1: ball.style.left="31%"; correctCup=cup1;
+    case 1: ball.style.left="calc(25% + 100px)"; correctCup=cup1;
     break;
     case 2: ball.style.left="50%"; correctCup=cup2;
     break
-    case 3: ball.style.left="69%"; correctCup=cup3; 
+    case 3: ball.style.left="calc(75% - 100px)"; correctCup=cup3; 
     break;
 }selectCup();
 }
