@@ -7,7 +7,7 @@ import { removeEventListeners, removeHoverEffect, removeClasses, repositionItems
 import { resetResultText, setResultText } from "./resultText";
 
 
-export const results = { lost: 0, won: 0};
+export const results = { lost: 0, won: 0}; // Die Inspiration für das Speichern in einem object kam von deinem Schere-Stein-Papier Spiel
 export let randomNumber:number;
 export let correctCup:HTMLDivElement;
 gameStart();
@@ -36,17 +36,17 @@ switch(randomNumber){
 
 function selectCup():void{
     allCups.forEach(element => {
-        element.classList.add("hoverCup");
+    element.classList.add("hoverCup");
     });
- cup1.addEventListener("click", cup1Selected);
- cup2.addEventListener("click", cup2Selected);
- cup3.addEventListener("click", cup3Selected);
+    cup1.addEventListener("click", cup1Selected);
+    cup2.addEventListener("click", cup2Selected);
+    cup3.addEventListener("click", cup3Selected);
 }
 
-export function showResult(){
+export function showResult():void{
     selectedCup.style.top="70px"
-   compareResult();
-   restartButton();
+    compareResult();
+    restartButton();
 }
 
 function compareResult():void{
@@ -70,12 +70,12 @@ function compareResult():void{
     }saveScore();
 }
 
-    function restartButton():void{
-        startButton.innerHTML = "Restart the Game";
-        removeEventListeners();
-        removeHoverEffect();
-        startButton.addEventListener("click", removeClasses, {once: true});
-        startButton.addEventListener("click", repositionItems, {once: true});
-        startButton.addEventListener("click", gameStart, {once: true});
-     }
+function restartButton():void{
+    startButton.innerHTML = "Restart the Game";
+    removeEventListeners();
+    removeHoverEffect();
+    startButton.addEventListener("click", removeClasses, {once: true});
+    startButton.addEventListener("click", repositionItems, {once: true});
+    startButton.addEventListener("click", gameStart, {once: true});
+}
 

@@ -1,5 +1,4 @@
-import { correctCup} from "./index";
-import {allCups,ball,cup1,cup2,cup3,resultText,startButton,} from "./Queryselectors";
+import {cup1,cup2,cup3,startButton,} from "./Queryselectors";
 import { activateStartButton } from "./startButton";
 
 export let selectedCup: HTMLDivElement; 

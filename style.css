@@ -43,6 +43,7 @@ h3{
 #cup-2{
     left: 50%;
     transform: translate( -50%);
+    z-index: 100;
 }
 #cup-3{
     right: 25%;
